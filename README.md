@@ -20,6 +20,8 @@ Let's see how to use
 
 
 ```swift
+import SwiftyNSDictionary
+
 let dict: NSDictionary = ["1": [1,2,3,4,[5,6,7]],
                           "2": ["2.1":[1,2,3],
                                 "2.2":2.2
