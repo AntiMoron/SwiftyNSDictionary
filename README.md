@@ -1,8 +1,8 @@
 # SwiftyNSDictionary
 
 ```SwiftyNSDictionary``` is a library that can help you convert values stored in a NSDictionary into non-objective-c types safely. 
-As we all know that Objective C containers such as ```NSArray```,```NSDictionary``` cannot store built-in types.
-Because of this the evil ```NSNull``` borns which causing lots of chaos. This library is to help fetch values safely without considering
+As we all know that Objective C containers such as ```NSArray```,```NSDictionary``` cannot store non-object types.
+Because of this the evil ```NSNull``` borns which causes lots of chaos. This library is to help get values safely without considering
 Objective-C types.
 
 ## About
