@@ -10,8 +10,8 @@ private func getImpl_<T>(_ o: Any?) -> T? {
   return nil
 }
 
-extension NSDictionary {
-  func get<T>(_ key: String) -> T? {
+public extension NSDictionary {
+  private func get<T>(_ key: String) -> T? {
     let ret: T? = getImpl_(flatten(self.object(forKey: key)))
     return ret
   }
@@ -27,22 +27,22 @@ extension NSDictionary {
     }
   }
   
-  func valueAsInt(forKey: String) -> Int? {
+  public func valueAsInt(forKey: String) -> Int? {
     return get(forKey)
   }
-  func valueAsArray(forKey: String) -> [Any]? {
+  public func valueAsArray(forKey: String) -> [Any]? {
     return get(forKey)
   }
-  func valueAsDouble(forKey: String) -> Double? {
+  public func valueAsDouble(forKey: String) -> Double? {
     return get(forKey)
   }
-  func valueAsBool(forKey: String) -> Bool? {
+  public func valueAsBool(forKey: String) -> Bool? {
     return get(forKey)
   }
-  func valueAsDictionary(forKey: String) -> [String: Any]? {
+  public func valueAsDictionary(forKey: String) -> [String: Any]? {
     return get(forKey)
   }
-  func valueAsString(forKey: String) -> String? {
+  public func valueAsString(forKey: String) -> String? {
     return get(forKey)
   }
 }
