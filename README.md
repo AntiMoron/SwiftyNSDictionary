@@ -1,6 +1,9 @@
 # SwiftyNSDictionary
 
-```SwiftyNSDictionary``` is a library that can help you convert values stored in a NSDictionary into different types. 
+```SwiftyNSDictionary``` is a library that can help you convert values stored in a NSDictionary into non-objective-c types safely. 
+As we all know that Objective C containers such as ```NSArray```,```NSDictionary``` cannot store built-in types.
+Because of this the evil ```NSNull``` borns which causing lots of chaos. This library is to help fetch values safely without considering
+Objective-C types.
 
 ## About
 
@@ -24,14 +27,15 @@ import SwiftyNSDictionary
 
 let dict: NSDictionary = ["1": [1,2,3,4,[5,6,7]],
                           "2": ["2.1":[1,2,3],
-                                "2.2":2.2
-                               ]]
+                                "2.2":2.2, 
+                               ],
+                          "3": NSNull()]
 let x = dict.valueAsInt(forKey: "1")
 let arr = dict.valueAsArray(forKey: "1")
 let dic = dict.valueAsDictionary(forKey: "2")
 ```
 
-## install
+## Install
 
 Open your ```Package.swift``` file.
 Add this to your ```depedencies``` array:

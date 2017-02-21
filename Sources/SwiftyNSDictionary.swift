@@ -18,14 +18,20 @@ public extension NSDictionary {
   private func flatten(_ o: Any?) -> Any? {
     guard let o_ = o else { return nil }
     switch o_ {
-    case let arr as [Any]:
-      return arr.flatMap { flatten($0) }
-    case let dict as [String: Any]:
-      var ret = [String: Any]()
-      _ = dict.flatMap { ret[$0.0] = flatten($0.1) }
-      return ret
-    default:
-      return o_  
+      case let nothing as NSNull:
+        return nil
+      case let num as NSNumber:
+        return num.doubleValue
+      case let str as NSString:
+        return String(str)
+      case let arr as [Any]:
+        return arr.flatMap { flatten($0) }
+      case let dict as [String: Any]:
+        var ret = [String: Any]()
+        _ = dict.flatMap { ret[$0.0] = flatten($0.1) }
+        return ret
+      default:
+        return o_  
     }
   }
   
@@ -45,6 +51,9 @@ public extension NSDictionary {
     return get(forKey)
   }
   public func valueAsString(forKey: String) -> String? {
+    return get(forKey)
+  }
+  public func valueAsAny(forKey: String) -> Any? {
     return get(forKey)
   }
 }
