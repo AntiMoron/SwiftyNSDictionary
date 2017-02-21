@@ -21,7 +21,9 @@ public extension NSDictionary {
     case let arr as [Any]:
       return arr.flatMap { flatten($0) }
     case let dict as [String: Any]:
-      return dict.flatMap { ($0.0, flatten($0.1)) }
+      var ret = [String: Any]()
+      _ = dict.flatMap { ret[$0.0] = flatten($0.1) }
+      return ret
     default:
       return o_  
     }
