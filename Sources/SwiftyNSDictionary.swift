@@ -18,7 +18,7 @@ public extension NSDictionary {
   private func flatten(_ o: Any?) -> Any? {
     guard let o_ = o else { return nil }
     switch o_ {
-      case let nothing as NSNull:
+      case let _ as NSNull:
         return nil
       case let num as NSNumber:
         return num.doubleValue
