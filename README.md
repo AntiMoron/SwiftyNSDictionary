@@ -13,7 +13,7 @@ We have functions that get values stored for a ```key: String```, and cast to ty
 
 All those functions are in the form of:
 ```
-func valueAs${Type}(forKey: String) -> ${Type}
+func valueAs${Type}(forKey: String) -> ${Type}?
 ```
 
 Let's see how to use
